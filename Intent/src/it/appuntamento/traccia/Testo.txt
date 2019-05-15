@@ -1,6 +1,6 @@
 Si vuole rappresentare un insieme di appuntamenti con pazienti in alcune stanze visita.
 
-- Un appuntamento è caratterizzato da una data, un'ora, una persona, ed una stanza
+- Un appuntamento è caratterizzato da un paziente, un medico, una data, un'ora, ed una stanza
 - Una persona è descritta da un nome, un cognome ed un codice fiscale
 - Un medico è una persona che ha come caratteristica una specializzazione e una Qualifica(primario ecc.)
 - Un paziente è una persona ed ha come caratteristica una patologia
