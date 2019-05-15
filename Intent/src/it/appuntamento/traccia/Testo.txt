@@ -1,4 +1,4 @@
-Si vuole rappresentare un'insieme di appuntamenti con pazienti in alcune stanze visita.
+Si vuole rappresentare un insieme di appuntamenti con pazienti in alcune stanze visita.
 
 - Un appuntamento è caratterizzato da una data, un'ora, una persona, ed una stanza
 - Una persona è descritta da un nome, un cognome ed un codice fiscale
