@@ -1,0 +1,15 @@
+Si vuole realizzare in Java un’applicazione per la gestione dei musei italiani.  
+Un Museo è caratterizzato da un codice (un intero che lo identifica univocamente), dal nome del museo (per es.: “Museo Nazionale”), dal nome della città, dal nome della regione, dal giorno settimanale di chiusura (una stringa, per es.: “lunedì”), dal numero di dipendenti, dal costo del biglietto (un double), e da un vector contenente le sezioni che lo compongono. 
+
+Una Sezione è caratterizzata da un nome (per es.: “Arte contemporanea”) e dalla lista delle opere che vi sono custodite. Un’Opera è caratterizzata da un codice (un intero che la identifica univocamente), dal nome dell’opera, dal nome dell’autore (una stringa, uguale a null se l’autore è sconosciuto), e dal periodo al quale l’opera risale.  
+
+Un Periodo è caratterizzato dall’anno di inizio e dall’anno di fine. Per es.: [anno di inizio = –100; anno di fine =  200] indica un periodo compreso tra il 100 A.C. ed il 200 D.C.. Si noti che l’anno di inizio e di fine sono uguali nel caso in cui il periodo coincida con un anno specifico. 
+
+Un ResocontoVisitatori contiene il numero di visitatori paganti che si sono recati nel museo con un determinato codice in un determinato anno. 
+
+Si implementino le classi Periodo, Opera, Sezione, Museo, ResocontoVisitatori, ed una classe GestioneMusei per la gestione delle informazioni complessive. La classe GestioneMusei comprende un vector di musei ed una lista di resoconti visitatori, ed implementa i seguenti metodi: 
+• int numeroOpere (int c) Restituisce il numero totale di opere custodite nel museo con codice c. 
+• LinkedList<Opera> opereAnticheRegione (String r) Restituisce la lista di tutte le opere che sono custodite nei musei della regione r, e che risalgono ad un periodo precedente all’anno 500 D.C. (cioè con anno di fine periodo < 500).  
+• LinkedList<Museo> museiAutoreGiorno (String a, String g) Riceve il nome di un autore a (per es.: “Michelangelo”) ed un giorno della settimana g (per es.: “domenica”), e restituisce la lista di tutti i musei che non sono chiusi il giorno g e che contengono almeno un’opera dell’autore a. 
+• int museoMaggioreIncasso (int a1, int a2) Restituisce il codice del museo che ha registrato il maggiore incasso nel periodo compreso tra gli anni a1 ed a2 (inclusi). Per un dato museo l’incasso si calcola moltiplicando il costo del biglietto (che si assume essere costante negli anni) per il numero totale di visitatori registrato nel periodo considerato (come risulta dai resoconti visitatori relativi a quel museo). 
+• Vector<String> cittàConPiùDipendenti (int k) Restituisce i nomi delle città nelle quali il numero totale di dipendenti nei musei è maggiore di k (si noti che in una città possono esserci più musei).
