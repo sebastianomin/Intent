@@ -83,23 +83,6 @@ public class GestioneAsilo {
 		return b;
 	 }
 	
-// public Bambino modificaBambino(Bambino b){
-//	 
-//	 for(int i=0; i<this.numBambiniInseriti; i++){
-//		 if (this.elencoB[i].equals(b)){
-//			 elencoB[i]= b;
-//			 return b;
-//		 }
-//	 }
-//	 if(numBambiniInseriti< this.elencoB.length){
-//		 elencoB[numBambiniInseriti]=b;
-//		 numBambiniInseriti++;
-//		}
-//	 else {
-//		System.out.println("Impossibile inserire il bambino. limite massimo superato");
-//	}
-//	 return null;	 
-// }
 
  /**
 	 * 
