@@ -6,21 +6,21 @@ class DemoFormeGeometriche {
       
     	GestioneForme gf=new GestioneForme();
     	
-      Forma q = new Quadrato(5);     
-         gf.aggiungiForma(q);
+      Forma q = new Quadrato(5);  
+      gf.getForme().add(q);
       Forma q1 = new Quadrato(15);
-         gf.aggiungiForma(q1);
+      gf.getForme().add(q1);
       Forma q2 = new Quadrato(13);
-         gf.aggiungiForma(q2);
+      gf.getForme().add(q2);
       Forma q3 = new Quadrato(14);
-         gf.aggiungiForma(q3);
+      gf.getForme().add(q3);
          
      Forma c=new Cerchio(3);
-         gf.aggiungiForma(c);
+     gf.getForme().add(c);
      Forma c1=new Cerchio(4);
-         gf.aggiungiForma(c1);
+     gf.getForme().add(c1);
      Forma c2=new Cerchio(2);
-         gf.aggiungiForma(c2);
+     gf.getForme().add(c2);
          
         //System.out.println(c2.area());
         System.out.println(gf.cercaArea(12.566370614359172));

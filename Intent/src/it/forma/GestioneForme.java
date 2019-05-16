@@ -7,15 +7,20 @@ public class GestioneForme {
 
 	private ArrayList <Forma>forme;
 	
+	
+	public ArrayList<Forma> getForme() {
+		return forme;
+	}
+
+	public void setForme(ArrayList<Forma> forme) {
+		this.forme = forme;
+	}
+
 	public GestioneForme (){
 		forme=new ArrayList<Forma>();
 		}
 	
-	public void aggiungiForma(Forma f){
-		forme.add(f);
-		f.area();//faccio calcolare l'area ogniqualvolta inserisco un elemento nella lista altrimenti
-		         //rimane il parametro settato a zero
-	}
+
 		
 	public String cercaArea(double area){
 		for (Forma f : forme)
@@ -68,7 +73,7 @@ public class GestioneForme {
 	@SuppressWarnings("unchecked")
 	public Quadrato quadratoLatoMinore(){
 		/*Attenzione: ComparaLatoQuadrato ordina la lista secondo un ordine
-		 * decrescente di lato quadrato quindi quello il quadrato con il lato più piccolo
+		 * decrescente di lato quadrato quindi quello il quadrato con il lato pi� piccolo
 		 * corrisponderà nella realtà al quadrato con il lato più grande e viceversa. Di
 		 * conseguenza dovremo andare alla ricerca del max della lista che sicuramente ci 
 		 * restituirà il quadrato con il lato più piccolo*/
