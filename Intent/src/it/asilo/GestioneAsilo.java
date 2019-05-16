@@ -1,13 +1,13 @@
 package it.asilo;
 
+import java.util.ArrayList;
 
 public class GestioneAsilo {
  private String nomeAsilo;
  private String citta;
- private Bambino[] elencoB;
+ private ArrayList <Bambino> elencoB;
  private Prenotazione[] elencoP;
- private int numBambiniInseriti;
-private int numPrenotazioniInserite;
+ private int n;
  
 	/**
 	 * 
@@ -18,16 +18,15 @@ private int numPrenotazioniInserite;
  public GestioneAsilo( String nAsilo, String nCitta, int n ){
 	 this.nomeAsilo=nAsilo;
 	 this.citta=nCitta;
-	 elencoB=new Bambino[n];
-	 numBambiniInseriti=0;
+	 elencoB=new ArrayList<>(n);
 	 elencoP =new Prenotazione[n];
-	 numPrenotazioniInserite=0;
+	this.n=n;
  }
  
  	/**
 	 * @return the bambini
 	 */
-	public Bambino[] getBambini() {
+	public ArrayList<Bambino> getBambini() {
 		return elencoB;
 	}
 
@@ -72,24 +71,35 @@ private int numPrenotazioniInserite;
 	 * @param b bambino da modificare
 	 * @return bambino vecchio oppure null
 	 */
- 
- public Bambino modifica_Bambino(Bambino b){
-	 
-	 for(int i=0; i<this.numBambiniInseriti; i++){
-		 if (this.elencoB[i].equals(b)){
-			 elencoB[i]= b;
-			 return b;
-		 }
+	public Bambino modificaBambino(Bambino b){
+		 
+		if(elencoB.size()<n) {
+			if(!elencoB.contains(b)) {
+				elencoB.add(b);
+				return null;
+			
+			}
+		} 
+		return b;
 	 }
-	 if(numBambiniInseriti< this.elencoB.length){
-		 elencoB[numBambiniInseriti]=b;
-		 numBambiniInseriti++;
-		}
-	 else {
-		System.out.println("Impossibile inserire il bambino. limite massimo superato");
-	}
-	 return null;	 
- }
+	
+// public Bambino modificaBambino(Bambino b){
+//	 
+//	 for(int i=0; i<this.numBambiniInseriti; i++){
+//		 if (this.elencoB[i].equals(b)){
+//			 elencoB[i]= b;
+//			 return b;
+//		 }
+//	 }
+//	 if(numBambiniInseriti< this.elencoB.length){
+//		 elencoB[numBambiniInseriti]=b;
+//		 numBambiniInseriti++;
+//		}
+//	 else {
+//		System.out.println("Impossibile inserire il bambino. limite massimo superato");
+//	}
+//	 return null;	 
+// }
 
  /**
 	 * 
@@ -97,9 +107,9 @@ private int numPrenotazioniInserite;
 	 * @return array di prenotazioni
 	 */
 	public Prenotazione[] getPrenotazioni(int Todata){
-		Prenotazione[] prenotazioniData= new Prenotazione[numPrenotazioniInserite];
+		Prenotazione[] prenotazioniData= new Prenotazione[n];
 		int inserimenti=0;
-		for (int i = 0; i < numPrenotazioniInserite; i++) {
+		for (int i = 0; i < n; i++) {
 			Prenotazione pren=elencoP[i];
 			if(pren.getDataPren()< Todata)
 			{
@@ -117,8 +127,8 @@ private int numPrenotazioniInserite;
 	 */
 	public boolean verificaRequisitoPrioritario(String cf){
 	    
-		for (int i = 0; i < numBambiniInseriti; i++) {
-			Bambino bamb = elencoB[i];
+		for (int i = 0; i < n; i++) {
+			Bambino bamb = elencoB.get(i);
 			if (bamb.getCodiceFiscale().equalsIgnoreCase(cf)) {
 				return bamb.verificaRequisito(citta);
 			}
@@ -132,10 +142,10 @@ private int numPrenotazioniInserite;
 	 * @return array di bambini che verificano il requisito
 	 */
 	public Bambino[] getBambiniPrioritati(){
-		Bambino[] bambiniPrioritari= new Bambino[numBambiniInseriti];
+		Bambino[] bambiniPrioritari= new Bambino[n];
 		int inserimenti = 0;
-		for (int i = 0; i < numBambiniInseriti; i++) {
-			Bambino bamb = elencoB[i];
+		for (int i = 0; i < n; i++) {
+			Bambino bamb = elencoB.get(i);
 			if (verificaRequisitoPrioritario(bamb.getCodiceFiscale())) {
 				bambiniPrioritari[inserimenti]= bamb;
 				inserimenti++;

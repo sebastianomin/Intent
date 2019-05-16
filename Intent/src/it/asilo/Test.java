@@ -11,7 +11,7 @@ public class Test {
 		Persona padre1=new Persona("mnhhsgsgs",d1 , "Roma", "Ing", 44000);
 		Persona madre1=new Persona("mnhhsgsgs",d1 , "Roma", "Ing", 44000);
 		Bambino b1=new Bambino(padre1, madre1);
-	    Bambino b=	ga.modifica_Bambino(b1);
+	    Bambino b=	ga.modificaBambino(b1);
 		System.out.println(b);
 		
 	}
