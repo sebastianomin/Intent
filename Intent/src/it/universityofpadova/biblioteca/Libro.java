@@ -1,4 +1,4 @@
-package universityofpadova.biblioteca;
+package it.universityofpadova.biblioteca;
 
 public class Libro {
 	private int codice;
