@@ -19,19 +19,12 @@ public class Auto extends Veicolo {
     public String getTipo() {
 	return tipo;
     }
-    public String toString(){
-    	return "Proprietario auto: "+getProprietario()
-    	+"\nnumero matricola: "+getMatricola()
-    	+"\ntipo auto: "+tipo
-    	+"\nmassima velocita: "+velocita
-    	+"\nanno immatricolazione: "+getAnnoImmatricolazione()
-    	+"\nscadenza Assicurazione: "+getScadAssicurazione()
-    	+"\nIl veicolo è Assicurato?: "+isAssicurato(2008)
-    	+"\ntarga: "+getTarga()
-    	+"\ncilindrata: "+getCilindrata()
-    	+"\n*****************************\n";
-    }
    
+   
+	@Override
+	public String toString() {
+		return "Auto" +super.toString()+"[tipo=" + tipo + ", incremento=" + incremento + ", velocita=" + velocita + "]\n";
+	}
 	@Override
 	public void accelera() {
 		velocita=velocita+incremento;

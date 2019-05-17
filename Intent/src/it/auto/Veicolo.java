@@ -75,6 +75,15 @@ public abstract class Veicolo implements Comparable, VeicoloAssicurato{
 			return true;
 		return false;
 	}
+
+	@Override
+	public String toString() {
+		return " [numMatricola=" + numMatricola + ", proprietario=" + proprietario + ", annoImmatricolazione="
+				+ annoImmatricolazione + ", scadAssicurazione=" + scadAssicurazione + ", targa=" + targa
+				+ ", cilindrata=" + cilindrata + ", stato=" + stato + "]";
+	}
+    
+    
     
    
 }  // fine classe Veicolo

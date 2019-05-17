@@ -4,6 +4,7 @@ import java.util.Comparator;
 
 @SuppressWarnings("unchecked")
 public class ComparaTipoAuto implements Comparator{
+	
 	public int compare(Object o1, Object o2) throws ClassCastException {
 		if(o1 instanceof Auto && o2 instanceof Auto ){
 			Auto a1= (Auto)o1;

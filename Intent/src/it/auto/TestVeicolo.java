@@ -6,20 +6,29 @@ public class TestVeicolo {
     
     GestioneVeicoli gest=new GestioneVeicoli();
     
-    Veicolo a=new Auto("sportiva",5,"pippo",123,1990,2009,"aa 207 bb ",1500,"disponibile");
+    Veicolo a=new Auto("sportivo",5,"pippo",123,1990,2009,"aa 207 bb ",1500,"disponibile");
 	 a.parti(1);
 	 a.accelera();
 	 gest.inserisciVeicolo(a);
 	 
-	Veicolo a1=new Auto("lusso",5,"pluto",456,1988,2008,"dd 100 aa",1200,"inConsegna");
+	Veicolo a1=new Auto("familiare",5,"pluto",456,1988,2008,"dd 100 aa",1200,"disponibile");
 	 a1.parti(2);
 	 a1.accelera();
 	 gest.inserisciVeicolo(a1);
 	 
-	Veicolo a2=new Auto("utilitaria",5,"paperino",789,2001,2009,"ac 090 fm",2000,"venduta");
+	Veicolo a2=new Auto("utilitario",5,"paperino",789,2001,2009,"ac 090 fm",2000,"disponibile");
 	 a2.parti(3);
 	 a2.accelera();
 	 gest.inserisciVeicolo(a2);
+	 
+	 Veicolo a3=new Auto("sportivo",5,"pippo",123,1990,2009,"aa 207 bb ",1500,"disponibile");
+		 a.parti(1);
+		 a.accelera();
+		 gest.inserisciVeicolo(a3);
+     Veicolo a4=new Auto("sportivo",5,"pippo",123,1990,2009,"aa 207 bb ",1500,"disponibile");
+			 a.parti(1);
+			 a.accelera();
+			 gest.inserisciVeicolo(a4);
 	
 	Veicolo c = new Camion(3,2,"tizio",136,2003,2007,"bc 150 zc",1400,"disponibile");
 	 c.parti(4);
