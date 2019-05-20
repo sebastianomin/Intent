@@ -35,14 +35,18 @@ public class Biblioteca {
 	 *            Cognome dell'utente da cercare.
 	 * @return Indice dell'utente.
 	 */
+	
 	private int cercaUtente(String unCognome) {
 		int result = -1;
-		for (int i = 0; i < utenti.size(); i++) {
-			if (utenti.get(i).getCognome().equals(unCognome))
-				result = i;
+		for (Utente u : utenti) {
+			if(u.getCognome().equals(unCognome)) {
+				result = utenti.indexOf(u);
+			}
 		}
+		
 		return result;
 	}
+
 
 	/**
 	 * Metodi richiesti. Aggiunge un utente alla biblioteca.
@@ -53,11 +57,21 @@ public class Biblioteca {
 	 *            Cognome.
 	 */
 	public void aggiungiUtente(String unNome, String unCognome) {
-		if (cercaUtente(unCognome) != -1)
-			return;
-		Utente a = new Utente(unNome, unCognome);
-		utenti.add(a);
+		boolean esisteCognome = false;
+		for (Utente u : utenti) {
+			if (u.getCognome().equals(unCognome)) {
+				esisteCognome = true;
+				System.out.println("L'utente: " + unCognome + " esiste già");
+				return;
+			}
+		}
+		if (!esisteCognome) {
+			Utente a = new Utente(unNome, unCognome);
+			utenti.add(a);
+		}
+
 	}
+
 
 	/**
 	 * Aggiunge un libro alla biblioteca.
@@ -67,12 +81,23 @@ public class Biblioteca {
 	 * @param unTitolo
 	 *            Titolo.
 	 */
+	
 	public void aggiungiLibro(int unCodice, String unTitolo) {
-		if (cercaCodice(unCodice) != -1)
-			return;
-		Libro b = new Libro(unCodice, unTitolo);
-		libri.add(b);
+		boolean esisteLibro = false;
+		for (Libro l : libri) {
+			if (l.getCodice()==unCodice) {
+				esisteLibro = true;
+				System.out.println("Il Libro con codice: " + unCodice + " esiste già");
+				return;
+			}
+		}
+		if (!esisteLibro) {
+			Libro l = new Libro(unCodice, unTitolo);
+			libri.add(l);
+		}
+		
 	}
+	
 
 	/**
 	 * Crea un prestito, assegnando un libro a un utente.
@@ -81,9 +106,26 @@ public class Biblioteca {
 	 *            Codice.
 	 * @unCognome Cognome.
 	 */
+	
 	public void creaPrestito(int unCodice, String unCognome) {
+		Utente utenteDaAssegnare = null;
+		for (Utente u : utenti) {
+			if (u.getCognome().equals(unCognome)) {
+				utenteDaAssegnare = u;
+			}
+
+		}
+		for (Libro libro : libri) {
+			if (libro.getCodice() == unCodice && libro.getUtenteAssegnato() == null) {
+				libro.setUtenteAssegnato(utenteDaAssegnare);
+
+			}
+
+		}
 		libri.get(cercaCodice(unCodice)).setUtenteAssegnato(utenti.get(cercaUtente(unCognome)));
 	}
+	
+
 
 	/**
 	 * Restituisce il contenuto degli ArrayList.
