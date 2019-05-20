@@ -57,6 +57,7 @@ public class BibliotecaTester {
 				break;
 
 			default:
+				System.out.println("Inserire un carattere valido [1-5]");
 				break;
 			}
 
