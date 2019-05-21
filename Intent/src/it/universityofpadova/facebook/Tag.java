@@ -43,15 +43,13 @@ public class Tag {
 	 */
 	private int cercaFoto(String unTitolo) {
 		int result = -1;
-		for (Foto f : fotografie) {
-			if(f.getTitolo().equals(unTitolo)) {
-				result=fotografie.indexOf(f);
-			}
-			
+		for (int i = 0; i < fotografie.size(); i++) {
+			if (fotografie.get(i).getTitolo().equals(unTitolo))
+				result = i;
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Aggiungi un amico all'Array amici.
 	 * 
